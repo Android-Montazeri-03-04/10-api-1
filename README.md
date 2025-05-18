@@ -18,6 +18,27 @@ API یا Application Programming Interface به معنای رابط برنامه
 
 فرض کنید شما یک اپلیکیشن هواشناسی دارید. این اپلیکیشن با استفاده از یک API به سرور هواشناسی متصل می‌شود و اطلاعات دما و پیش‌بینی هوا را دریافت می‌کند.
 
+### JSON چیست؟
+
+JSON (JavaScript Object Notation) یک فرمت ساده و سبک برای تبادل داده‌ها بین سیستم‌ها است. داده‌های JSON به صورت متن ساده و ساختاریافته هستند که شامل کلیدها و مقادیر می‌شوند.
+
+### مثال JSON
+
+در اینجا یک نمونه از JSON از یک API فیلم داریم:
+
+```json
+{
+  "id": 1,
+  "title": "The Shawshank Redemption",
+  "year": "1994",
+  "director": "Frank Darabont",
+  "actors": "Tim Robbins, Morgan Freeman, Bob Gunton",
+  "plot": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+}
+```
+
+این JSON اطلاعاتی درباره یک فیلم را به صورت ساختار یافته نمایش می‌دهد.
+
 ## ۲. دیتابیس چیست؟
 
 یک پایگاه داده (Database) یک سیستم سازماندهی شده برای ذخیره، مدیریت و بازیابی اطلاعات است. به زبان ساده، دیتابیس یک مکان برای ذخیره اطلاعات به صورت ساختار یافته است.
@@ -68,6 +89,40 @@ ssh your_username@your_server_ip
 ```bash
 wget https://github.com/pocketbase/pocketbase/releases/download/v0.14.1/pocketbase_0.14.1_linux_amd64.zip
 ```
+
+* این لینک مربوط به نسخه 0.14.1 است. برای دریافت نسخه جدیدتر، به صفحه گیت‌هاب Pocketbase مراجعه کنید.
+
+### مرحله ۳: استخراج فایل
+
+```bash
+unzip pocketbase_0.14.1_linux_amd64.zip
+chmod +x pocketbase
+```
+
+### مرحله ۴: اجرای Pocketbase روی یک پورت خاص
+
+```bash
+./pocketbase serve --http=0.0.0.0:8000
+```
+
+* در اینجا پورت 8000 استفاده شده است. می‌توانید آن را به پورت دلخواه خود تغییر دهید.
+
+### مرحله ۵: اطمینان از دسترسی فایروال
+
+* اگر فایروال شما فعال است، مطمئن شوید که پورت مورد نظر باز باشد:
+
+```bash
+ufw allow 8000
+```
+
+### مرحله ۶: دسترسی به Pocketbase
+
+* مرورگر خود را باز کرده و IP سرور خود را به همراه پورت وارد کنید:
+
+```
+http://your_server_ip:8000
+```
+
 
 * این لینک مربوط به نسخه 0.14.1 است. برای دریافت نسخه جدیدتر، به صفحه گیت‌هاب Pocketbase مراجعه کنید.
 
