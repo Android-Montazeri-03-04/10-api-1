@@ -24,6 +24,11 @@ JSON (JavaScript Object Notation) یک فرمت ساده و سبک برای تب
 
 ### مثال JSON
 
+
+```
+https://moviesapi.codingfront.dev/api/v1/movies/1
+```
+
 در اینجا یک نمونه از JSON از یک API فیلم داریم:
 
 ```json
